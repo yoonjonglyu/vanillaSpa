@@ -1,0 +1,15 @@
+.DS_Store
+node_modules
+
+# env & config
+*.env
+*.config
+
+# Editor
+.ida
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

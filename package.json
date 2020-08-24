@@ -1,0 +1,22 @@
+{
+  "name": "vainillaspa",
+  "version": "1.0.0",
+  "description": "vanilla single page app lib",
+  "main": "main.js",
+  "scripts": {
+    "bulid": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoonjonglyu/vainillaSpa.git"
+  },
+  "keywords": [
+    "spa"
+  ],
+  "author": "ISA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoonjonglyu/vainillaSpa/issues"
+  },
+  "homepage": "https://github.com/yoonjonglyu/vainillaSpa#readme"
+}
