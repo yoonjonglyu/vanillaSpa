@@ -1,1 +1,8 @@
-# 메인 루트
+import './assets/css/index.css';
+import App from './app';
+
+class init {
+    render() {
+        return App;
+    }
+}
