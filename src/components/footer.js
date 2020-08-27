@@ -1,11 +1,15 @@
-import '../assets/css/footer.css';
+import Isa from '../core/ISA.js';
+//import '../assets/css/footer.css';
 
-export default class Footer {
-    return () {
-        <template>
-            <footer>
-                <copyright>ISA ALL RIGHT RESERVE.</copyright>
-            </footer>
-        </template>
+const element = `
+<footer>
+    <copyright>ISA ALL RIGHT RESERVE.</copyright>
+</footer>
+`
+class Footer {
+    render () {
+        return element;
     }
 }
+
+export default new Footer; 

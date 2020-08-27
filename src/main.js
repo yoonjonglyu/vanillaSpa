@@ -1,8 +1,13 @@
-import './assets/css/index.css';
-import App from './app';
+//import './assets/css/index.css';
+import Isa from './core/ISA.js';
+import App from './app.js';
 
-class init {
-    render() {
-        return App;
+class Init extends Isa {
+    return () {
+        return  App.render();
     }
 }
+
+const Spa = new Init;
+const app = Spa.return();
+Spa.render(app);
