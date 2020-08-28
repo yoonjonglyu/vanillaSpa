@@ -1,13 +1,21 @@
-import Isa from '../core/ISA.js';
-//import '../assets/css/header.css';
+import {Isa, Spa} from '../core/ISA.js';
+Spa.getStyle('header.css');
+
 const element = `
 <header>
     <h1>header section.</h1>
 </header>
-`
-class Header {
-    render () {
-        return element;
+`;
+
+class Header extends Isa {
+     Spa = {
+        template : element,
+        event : function () {
+            console.log(this);
+            this.addEventListener('click', () => {
+                console.log(this);
+            });
+        }
     }
 }
 

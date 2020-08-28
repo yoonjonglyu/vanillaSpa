@@ -1,14 +1,21 @@
-import Isa from '../core/ISA.js';
-//import '../assets/css/footer.css';
+import {Isa, Spa} from '../core/ISA.js';
+Spa.getStyle('footer.css');
 
 const element = `
 <footer>
     <copyright>ISA ALL RIGHT RESERVE.</copyright>
 </footer>
-`
-class Footer {
-    render () {
-        return element;
+`;
+
+class Footer extends Isa {
+    Spa = {
+        template : element,
+        event : function () {
+            console.log(this);
+            this.addEventListener('click', () => {
+                console.log(this);
+            });
+        }
     }
 }
 
