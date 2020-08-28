@@ -18,6 +18,8 @@
 > app components dir.
 - src => store
 > store management & if models
+- src => core
+> core js Spa lib
 
 ## LICENSE
 
