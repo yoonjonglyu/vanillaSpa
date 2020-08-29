@@ -4,7 +4,7 @@ import App from './app.js';
 
 class Init extends Isa {
     Spa = {
-        template : App.template()
+        template : App.return()
     }
 }
 

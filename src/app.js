@@ -1,14 +1,17 @@
-//import './assets/css/app.css';
 import {Isa, Spa} from './core/ISA.js';
+Spa.getStyle('app.css');
 import Header from './components/header.js';
 import Footer from './components/footer.js';
+import Hello from './page/hello.js';
 
 const element = `
-    ${Header.template()}
+<div id= "wrap">
+    ${Header.return()}
     <main role="main">
-        <h2>Hello, ISA</h2>
+        ${Hello.return({test : 'prop테스트'})}
     </main>
-    ${Footer.template()}
+    ${Footer.return()}
+</div>
 `;
 
 class App extends Isa {

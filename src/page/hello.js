@@ -1,14 +1,17 @@
+
 import {Isa, Spa} from '../core/ISA.js';
-Spa.getStyle('header.css');
+Spa.getStyle('hello.css');
 
 const element = `
-<header>
-    <h1>header section.</h1>
-</header>
+<h2>{{ message }} {{ TeSt }}</h2>
 `;
 
-class Header extends Isa {
+class Hello extends Isa {
     Spa = {
+        data : {
+            message : '<span>Hello, ISA</span>',
+            test : '<span>{{ Prop-Test }}</span>'
+        },
         template : element,
         event : function () {
             console.log(this);
@@ -19,4 +22,4 @@ class Header extends Isa {
     }
 }
 
-export default new Header;
+export default new Hello; 
