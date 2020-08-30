@@ -2,7 +2,7 @@ class ISA {
     constructor(Isa, head, style){
         this.Isa = document.querySelector('body');
         this.head = document.querySelector('head');
-        this.style = [];
+        this.style = [];    
     }
     // 렌더링
     render () {   
@@ -26,23 +26,32 @@ class ISA {
     // 템플릿
     template () {
         if(this.Spa.data){
+            const dataLength = Object.keys(this.Spa.data).length;
+            const templateExp =  [new RegExp('{{', 'g'), new RegExp('}}', 'g')];
+            let state = this.Spa.template.split(' ').join('');
+            const templateLength = [[...state.matchAll(templateExp[0])].length, [...state.matchAll(templateExp[1])].length];
 
-            const length = Object.keys(this.Spa.data).length;
-            if(length > 0){
+            if(dataLength > 0 && dataLength === templateLength[0] && dataLength === templateLength[1]){
                 for(const [key, value] of Object.entries(this.Spa.data)){
                     if(this.Spa.template){
                         const regExp =  new RegExp(key, 'gi');
                         
                         if(value.includes('Prop-') === true){
                             console.error(`Invalid Prop data : ${key}`);
-                            this.Spa.template = this.Spa.template.replace(regExp, '@@Invalid Prop data@@');
+                            this.Spa.template = this.Spa.template.replace(regExp, '<span style="font-size: 2rem; color : red;">@@Invalid Prop data@@</span>');
                         } else {
                             this.Spa.template = this.Spa.template.replace(regExp, value);
                         }
                     }
                 }
-
+                
                 this.Spa.template = this.Spa.template.replace(/\{\{/g, '').replace(/\}\}/g, '');
+            } else if(dataLength !== templateLength[0] && templateLength[0] === templateLength[1]){
+                console.error(`Undefined Data`);
+                this.Spa.template = '<span style="font-size: 2rem; color : red;">@@Undefined Data@@</span>';
+            } else {
+                console.error(`Syntax Error`);
+                this.Spa.template = '<span style="font-size: 2rem; color : red;">@@Syntax Error@@</span>';
             }
         }
 
